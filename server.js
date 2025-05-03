@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const errorHandler = require('./middleware/error');
 const authRoutes = require('./routes/authRoutes');
+const rewardRoutes = require('./routes/rewardRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -29,6 +30,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/rewards', rewardRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

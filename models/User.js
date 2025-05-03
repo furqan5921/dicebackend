@@ -37,6 +37,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide a city']
     },
+    tokens: {
+        type: Number,
+        default: 0
+    },
     role: {
         type: String,
         enum: ['user', 'gamer', 'admin'],
